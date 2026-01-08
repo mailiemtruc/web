@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cộng Đồng Discord Mihoyo & WuWa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Exo+2:ital,wght@0,600;0,800;1,700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <canvas id="anime-particles"></canvas>
+
+    <nav class="glass-nav">
+        <div class="logo">TRÍ NGUYỄN <span class="highlight">COMMUNITY</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" data-text="Trang Chủ">Trang Chủ</a></li>
+            <li><a href="#audience" data-text="Dành Cho Ai">Dành Cho Ai</a></li>
+            <li><a href="#features" data-text="Server Có Gì">Server Có Gì</a></li>
+            <li><a href="#about" data-text="Admin & Cam Kết">Admin & Cam Kết</a></li>
+        </ul>
+        <a id="discord-link-nav" href="#" target="_blank" class="btn-nav">
+            <span class="btn-text">Join Discord</span>
+            <div class="btn-shine"></div>
+        </a>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="badge-container fade-in">
+                <span class="badge"><i class="fas fa-bolt"></i> DISCORD COMMUNITY</span>
+            </div>
+            
+            <div class="glitch-wrapper">
+                <h1 id="hero-title" class="anime-title">LOADING SYSTEM...</h1>
+            </div>
+            
+            <p id="hero-desc" class="hero-desc typing-effect"></p>
+            
+            <div class="cta-group fade-in-delay">
+                <a id="discord-link-hero" href="#" class="btn btn-primary pulse-anim">
+                    <span class="btn-icon"><i class="fab fa-discord"></i></span>
+                    <span class="btn-lable">THAM GIA NGAY</span>
+                </a>
+                <a href="#audience" class="btn btn-secondary">
+                    <span class="btn-lable">KHÁM PHÁ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="audience" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-shadow="TARGET AUDIENCE">SERVER NÀY DÀNH CHO AI?</h2>
+            <div class="divider-center"></div>
+            <div id="audience-container" class="modern-grid"></div>
+            <div class="quote-box scroll-reveal">
+                <i class="fas fa-quote-left"></i>
+                <p id="audience-quote" class="anime-quote"></p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section-padding relative">
+        <div class="container">
+            <h2 class="section-title" data-shadow="SYSTEM FEATURES">SERVER CÓ GÌ HOT?</h2>
+            <div class="divider-center"></div>
+            <div id="features-container"></div>
+            
+            <div class="env-banner glass-panel scroll-reveal floating-anim">
+                <h3 class="highlight-title text-center"><i class="fas fa-shield-cat"></i> MÔI TRƯỜNG THÂN THIỆN</h3>
+                <div id="env-container" class="modern-grid compact-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container glass-panel scroll-reveal">
+            <div class="admin-grid">
+                <div class="admin-info">
+                    <h3 class="highlight-title">ADMIN: TRÍ NGUYỄN</h3>
+                    <p id="admin-desc" class="desc-text"></p>
+                    <ul id="admin-list" class="rocket-list"></ul>
+                </div>
+                
+                <div class="commitment-box">
+                    <h3 class="neon-pink-text">CAM KẾT & GIÁ TRỊ</h3>
+                    <div id="commit-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div id="social-links" class="footer-links"></div>
+            <div id="footer-quote" class="poetic-text"></div>
+            <div class="copyright">
+                <p>© 2026 Trí Nguyễn Community.</p>
+                <p style="font-size: 0.8rem; opacity: 0.6;">Designed by OW</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
