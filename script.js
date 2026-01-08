@@ -36,7 +36,12 @@ class Particle {
 }
 function initParticles() {
     particlesArray = [];
-    for (let i = 0; i < 100; i++) particlesArray.push(new Particle()); 
+    // Nếu màn hình nhỏ hơn 768px (điện thoại) thì chỉ tạo 30 hạt, ngược lại 100 hạt
+    let numberOfParticles = window.innerWidth < 768 ? 30 : 100; 
+    
+    for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle()); 
+    }
 }
 function animateParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -258,21 +263,20 @@ function parseContent(text) {
 
 
 function initTiltEffect() {
+    // Nếu là điện thoại thì DỪNG NGAY, không chạy hiệu ứng này
+    if (window.innerWidth < 1024) return; 
+
     const cards = document.querySelectorAll('.glass-card');
-    
     cards.forEach(card => {
+        // ... (Giữ nguyên code xử lý mousemove cũ ở trong đây) ...
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
-            
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
             const rotateX = ((y - centerY) / centerY) * -10; 
             const rotateY = ((x - centerX) / centerX) * 10;
-
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
         });
 
@@ -294,4 +298,39 @@ function reveal() {
             reveals[i].classList.add('active');
         }
     }
+}
+
+
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links li a');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}
+
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+
+document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+});
+
+
+const discordNav = document.getElementById('discord-link-nav');
+const discordMobile = document.getElementById('discord-link-nav-mobile');
+if (discordNav && discordMobile) {
+    discordMobile.href = discordNav.href;
 }
